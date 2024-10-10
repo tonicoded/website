@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Nut November Crypto Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background animation -->
+    <div class="background">
+        <div class="countdown-container">
+            <div class="countdown-timer">
+                <p>Day <span id="dayCount">01</span></p>
+                <p>Countdown: <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Title and tagline -->
+        <h1 class="title">NO NUT NOVEMBER COIN</h1>
+        <p class="subtitle">The Ultimate Test of Discipline in Crypto</p>
+
+        <!-- Crypto coin animation or graphic -->
+        <div class="coin-container">
+            <img src="coin.png" alt="Crypto Coin" class="coin">
+        </div>
+
+        <!-- Links to social media and crypto platform -->
+        <div class="icons-container">
+            <a href="https://x.com/nonnutcoin" target="_blank">
+                <img src="x.png" alt="X Icon" class="icon">
+            </a>
+            <a href="https://t.me/nonnutcoin" target="_blank">
+                <img src="tg.png" alt="Telegram Icon" class="icon">
+            </a>
+            <a href="https://coinmarketcap.com/nonnut" target="_blank">
+                <img src="coinmarketcap.png" alt="CMC Icon" class="icon">
+            </a>
+        </div>
+
+        <!-- Copyright text -->
+        <p class="copyright">© COPYRIGHT 2024 | ALL RIGHTS RESERVED</p>
+    </div>
+
+    <script>
+        // Countdown Timer Script
+        const countdown = () => {
+            const now = new Date();
+            const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            const timeDiff = nextDay - now;
+
+            const hours = Math.floor(timeDiff / 1000 / 60 / 60);
+            const minutes = Math.floor(timeDiff / 1000 / 60) % 60;
+            const seconds = Math.floor(timeDiff / 1000) % 60;
+
+            document.getElementById('hours').innerHTML = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerHTML = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerHTML = String(seconds).padStart(2, '0');
+        };
+
+        setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
